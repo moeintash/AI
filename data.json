@@ -1,0 +1,71 @@
+{
+  "personal": {
+    "name": "Moein Tash",
+    "fullName": "Moein Shahiki Tash",
+    "title": "PhD in Artificial Intelligence (NLP)",
+    "tagline": "I am passionate about Natural Language Processing, Deep Learning and building intelligent solutions that make a real impact.",
+    "email": "moein.tash@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/moein-shahiki-tash-296011149/",
+    "github": "https://github.com/moein-tash",
+    "scholar": "https://scholar.google.com/citations?hl=en&user=kj13UmQAAAAJ",
+    "resumeLink": "https://moeintash.github.io/Home-page/#home"
+  },
+  "chatbotKnowledge": [
+    {
+      "keywords": ["research", "area", "focus", "what", "work", "doing", "study", "field"],
+      "answer": "Moein Tash's research area is Natural Language Processing (NLP). His work focuses on deep learning, transformers, sentiment analysis, hate/hope speech detection, social support detection, and FinTech NLP."
+    },
+    {
+      "keywords": ["who", "name", "are you", "introduce", "yourself", "moein", "about him"],
+      "answer": "Moein Tash is a PhD researcher in Artificial Intelligence (NLP) at IPN Mexico City and currently a Lecturer at Universidad Panamericana, CDMX. He specializes in Natural Language Processing and Social Media Mining."
+    },
+    {
+      "keywords": ["education", "degree", "university", "studied", "school", "phd", "master", "bachelor"],
+      "answer": "Moein is completing his PhD in Computer Science (NLP) at Instituto Politécnico Nacional (IPN), Mexico City (2022-2026), at the Gelbukh Lab. He holds an M.Sc. with Distinction and a B.Sc. in Computer Science from the University of Sistan and Baluchestan, Iran."
+    },
+    {
+      "keywords": ["publication", "paper", "article", "journal", "publish", "how many"],
+      "answer": "Moein has 12 journal papers (8 published in Q1/Q2 journals like Scientific Reports, Cognitive Computation, Heliyon, and PLOS ONE, plus 4 under review) and 11 conference papers in venues including ACL workshops, IberLEF, ICON, and DravidianLangTech."
+    },
+    {
+      "keywords": ["experience", "work", "job", "career", "company", "employer", "position"],
+      "answer": "Moein currently teaches NLP at Universidad Panamericana (since July 2025) and researches at IPN's Gelbukh Lab. Previously, he was a Machine Learning Engineer at Lidoma (2019-2022) and a Python Developer at Hi-Web (2017-2018)."
+    },
+    {
+      "keywords": ["contact", "email", "reach", "connect", "linkedin", "scholar", "github"],
+      "answer": "You can reach Moein at moein.tash@gmail.com. He is also active on LinkedIn, GitHub, and Google Scholar — always open to academic collaboration and research discussions."
+    },
+    {
+      "keywords": ["language", "speak", "english", "persian", "spanish", "farsi", "baluchi"],
+      "answer": "Moein is fluent in English, native in Persian and Baluchi, and has intermediate Spanish."
+    },
+    {
+      "keywords": ["skill", "tech", "tool", "python", "machine learning", "deep learning", "framework"],
+      "answer": "Moein's tech stack: Python, TensorFlow, Keras, Hugging Face, Scikit-learn, Pandas, NumPy, Streamlit, LangChain, FAISS, and Azure ML. NLP expertise includes hate/hope speech detection, sentiment analysis, NER, code-mixed text handling, and language identification."
+    },
+    {
+      "keywords": ["project", "build", "built", "develop", "made"],
+      "answer": "Some notable projects: a URL-based RAG chatbot (Streamlit + LangChain + FAISS), a bilingual social support dataset (English & Spanish), a crypto emotion analysis system using SenticNet, and the IberLEF 2026 SSD Shared Task he organizes."
+    },
+    {
+      "keywords": ["achievement", "award", "scholarship", "honor", "recognition"],
+      "answer": "Moein holds the SECIHTI Scholarship from the Government of Mexico, graduated his M.Sc. with Distinction, is the Main Organizer of the SSD Shared Task at IberLEF 2026, a Program Committee Member at SemEval-2027, and has reviewed 10+ articles for international conferences."
+    },
+    {
+      "keywords": ["location", "where", "live", "based", "country", "city", "mexico"],
+      "answer": "Moein is based in Mexico City, Mexico, where he is pursuing his PhD at IPN and teaching at Universidad Panamericana."
+    },
+    {
+      "keywords": ["nlp", "natural language", "social media", "mining", "sentiment", "hate", "hope"],
+      "answer": "Moein's NLP research covers social support detection, hate speech detection, hope speech detection, sentiment analysis, language identification, and FinTech NLP — particularly cryptocurrency discourse analysis using SenticNet and psycholinguistics."
+    },
+    {
+      "keywords": ["lecturer", "teach", "teaching", "professor", "panamericana"],
+      "answer": "Moein has been a Lecturer at Universidad Panamericana, CDMX since July 2025, where he teaches graduate-level courses in Natural Language Processing (NLP)."
+    }
+  ],
+  "greetings": [
+    "Hello! I'm Moein's AI assistant. Feel free to ask me anything about Moein Tash."
+  ],
+  "offTopicResponse": "I can only answer questions related to Moein Tash. Please ask something about his background, experience, skills, or research."
+}
