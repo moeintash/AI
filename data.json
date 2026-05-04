@@ -1,0 +1,144 @@
+{
+  "personal": {
+    "name": "Moein Tash",
+    "fullName": "Moein Shahiki Tash",
+    "title": "PhD in Artificial Intelligence (NLP)",
+    "tagline": "I am passionate about Natural Language Processing, Deep Learning and building intelligent solutions that make a real impact.",
+    "email": "moein.tash@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/moein-shahiki-tash-296011149/",
+    "github": "https://github.com/moein-tash",
+    "scholar": "https://scholar.google.com/citations?hl=en&user=kj13UmQAAAAJ",
+    "resumeLink": "https://moeintash.github.io/Home-page/#home",
+    "currentPosition": "Lecturer at Universidad Panamericana, CDMX (since July 2025)",
+    "currentResearchPosition": "PhD Researcher at Gelbukh Lab, IPN Mexico City (2022-2026)",
+    "location": "Mexico City, Mexico",
+    "languages": "Fluent in English, Native in Persian and Baluchi, Intermediate Spanish"
+  },
+  "fullCV": {
+    "education": [
+      "PhD in Computer Science (Natural Language Processing) at Centro de Investigación en Computación (CIC), Instituto Politécnico Nacional (IPN), Mexico City — Researcher at Gelbukh Lab (NLP & AI Research Group), 2022-2026",
+      "M.Sc. in Computer Science from University of Sistan and Baluchestan, Iran (2018-2021) — Graduated with Distinction",
+      "B.Sc. in Computer Science from University of Sistan and Baluchestan, Iran (2012-2017)"
+    ],
+    "experience": [
+      "Lecturer at Panamericana University, CDMX (July 2025 - Present) — Teaching graduate-level courses in Natural Language Processing (NLP)",
+      "Researcher at Alexander Gelbukh Lab, IPN (August 2022 - 2026) — Built a chatbot with Streamlit, LangChain, and FAISS for URL-based content search. Created social support dataset in English and Spanish. Applied deep learning to hate/hope speech and sentiment analysis. Used ML models for language identification. Trained/deployed NLP models on Azure ML. Analyzed crypto emotions with SenticNet and psycholinguistics.",
+      "Machine Learning Engineer at Lidoma (April 2019 - July 2022) — Built ML models for NLP tasks using TensorFlow and Scikit-learn. Performed exploratory data analysis to guide predictive modeling.",
+      "Python Developer at Hi-Web (December 2017 - December 2018) — Processed and analyzed data using Pandas and NumPy. Automated data pipelines for retrieval and cleaning."
+    ],
+    "publications": {
+      "summary": "12 journal papers (8 published in Q1/Q2 journals, 4 under review) and 11 conference papers in venues including ACL workshops, IberLEF, ICON, and DravidianLangTech.",
+      "highlights": [
+        "Psycholinguistic and Emotion Analysis of Cryptocurrency Discourse on X platform (Scientific Reports, Q1, IF: 3.8)",
+        "Analyzing Emotional Trends from X Platform Using SenticNet (Cognitive Computation, Q1, IF: 4.3)",
+        "Exploring Multidimensional Aspects of Hope Speech Computationally (Scientific Reports, Q1, IF: 3.8)",
+        "Advanced Machine Learning Techniques for Social Support Detection on Social Media (Heliyon, Q1, IF: 3.4)",
+        "Social Support Detection from Social Media Texts (PLOS ONE, Q1, IF: 2.9)",
+        "Evaluating capability of large language models for multilingual sarcasm detection (PeerJ Computer Science, Q2)"
+      ]
+    },
+    "skills": {
+      "technical": "Python, NumPy, Pandas, Scikit-learn, Keras, TensorFlow, Hugging Face Transformers, LangChain, FAISS, Streamlit, MySQL Workbench, Azure Machine Learning",
+      "nlp": "POS Tagging, Named Entity Recognition (NER), Sentiment Analysis, Hate Speech Detection, Hope Speech Detection, Emotion Analysis, Code-mixed text handling, Language Identification, Social Support Detection, FinTech NLP, Cryptocurrency discourse analysis",
+      "research": "Deep Learning, Transformers, BERT, LSTM, CNN, Embeddings, Large-scale Datasets, Feature Engineering, Psycholinguistics"
+    },
+    "achievements": [
+      "SECIHTI Scholarship from Government of Mexico for PhD studies",
+      "Master's graduation with Distinction",
+      "Main Organizer of SSD (Social Support Detection) Shared Task at IberLEF 2026",
+      "Program Committee Member at SemEval-2027 (21st International Workshop on Semantic Evaluation)",
+      "Reviewed 10+ articles for international NLP/AI conferences",
+      "IBM Certifications: Python for Data Science, AI & Development; Python Project for Data Science"
+    ],
+    "researchInterests": "Social Media Mining, Natural Language Processing, Social Support Detection, FinTech NLP, Hate Speech Detection, Hope Speech Detection, Language Identification, Sentiment Analysis, Cross-lingual NLP (English, Spanish, Dravidian languages, Persian)",
+    "projects": [
+      "URL-based RAG Chatbot using Streamlit, LangChain, and FAISS for content search",
+      "Bilingual Social Support Dataset (English & Spanish) curated from social media",
+      "Crypto Emotion Analysis System using SenticNet and psycholinguistic features",
+      "IberLEF 2026 SSD Shared Task — task design, dataset curation, evaluation framework",
+      "Hate & Hope Speech Classifiers for Dravidian, Spanish, and English languages using BERT/LSTM/CNN"
+    ]
+  },
+  "chatbotKnowledge": [
+    {
+      "keywords": ["research", "area", "focus", "field", "specialization", "specialize"],
+      "answer": "Moein's research focuses on Natural Language Processing (NLP) and Social Media Mining. He works on social support detection, hate/hope speech detection, sentiment analysis, language identification, and FinTech NLP — particularly cryptocurrency discourse analysis. He uses deep learning, transformers, and psycholinguistic features in his work."
+    },
+    {
+      "keywords": ["who", "introduce", "yourself", "about him", "about you", "about moein"],
+      "answer": "Moein Shahiki Tash is a PhD researcher in Artificial Intelligence (NLP) at Instituto Politécnico Nacional (IPN), Mexico City, working at the Gelbukh Lab. He's also a Lecturer at Universidad Panamericana, CDMX, where he teaches graduate-level NLP courses. He has 12 journal papers and 11 conference papers published."
+    },
+    {
+      "keywords": ["education", "degree", "university", "studied", "school", "phd", "master", "bachelor"],
+      "answer": "Moein is completing his PhD in Computer Science (NLP) at IPN Mexico City (2022-2026) at the Gelbukh Lab. He holds an M.Sc. (with Distinction) and B.Sc. in Computer Science from the University of Sistan and Baluchestan, Iran."
+    },
+    {
+      "keywords": ["publication", "paper", "article", "journal", "publish", "how many"],
+      "answer": "Moein has 12 journal papers (8 published in Q1/Q2 journals, 4 under review) and 11 conference papers. His Q1 publications appear in Scientific Reports, Cognitive Computation, Heliyon, and PLOS ONE. He's also published at ACL workshops, IberLEF, ICON, and DravidianLangTech."
+    },
+    {
+      "keywords": ["experience", "work", "job", "career", "company", "employer", "position"],
+      "answer": "Moein currently teaches NLP at Universidad Panamericana (since July 2025) and researches at IPN's Gelbukh Lab. Previously, he was a Machine Learning Engineer at Lidoma (2019-2022) and a Python Developer at Hi-Web (2017-2018)."
+    },
+    {
+      "keywords": ["contact", "email", "reach", "linkedin", "scholar", "github"],
+      "answer": "You can reach Moein at moein.tash@gmail.com. He's also active on LinkedIn, GitHub, and Google Scholar — always open to academic collaboration and research discussions."
+    },
+    {
+      "keywords": ["language", "speak", "english", "persian", "spanish", "farsi", "baluchi"],
+      "answer": "Moein is fluent in English, native in Persian and Baluchi, and has intermediate Spanish."
+    },
+    {
+      "keywords": ["skill", "tech", "tool", "python", "machine learning", "deep learning", "framework", "library"],
+      "answer": "Moein's tech stack: Python, TensorFlow, Keras, Hugging Face Transformers, Scikit-learn, Pandas, NumPy, Streamlit, LangChain, FAISS, and Azure ML. His NLP expertise covers hate/hope speech detection, sentiment analysis, NER, code-mixed text handling, and language identification."
+    },
+    {
+      "keywords": ["project", "build", "built", "develop", "made", "created"],
+      "answer": "Some notable projects: a URL-based RAG chatbot (Streamlit + LangChain + FAISS), a bilingual social support dataset (English & Spanish), a crypto emotion analysis system using SenticNet, and the IberLEF 2026 SSD Shared Task he organizes."
+    },
+    {
+      "keywords": ["achievement", "award", "scholarship", "honor", "recognition"],
+      "answer": "Moein holds the SECIHTI Scholarship from the Government of Mexico, graduated his M.Sc. with Distinction, is the Main Organizer of the SSD Shared Task at IberLEF 2026, a Program Committee Member at SemEval-2027, and has reviewed 10+ articles for international conferences."
+    },
+    {
+      "keywords": ["location", "where", "live", "based", "country", "city", "mexico"],
+      "answer": "Moein is based in Mexico City, Mexico, where he's pursuing his PhD at IPN and teaching at Universidad Panamericana."
+    },
+    {
+      "keywords": ["nlp", "natural language", "social media", "mining", "sentiment"],
+      "answer": "Moein's NLP research covers social support detection, hate speech detection, hope speech detection, sentiment analysis, language identification, and FinTech NLP. He works on cross-lingual NLP across English, Spanish, Dravidian languages, and Persian."
+    },
+    {
+      "keywords": ["lecturer", "teach", "teaching", "professor", "panamericana", "course"],
+      "answer": "Moein has been a Lecturer at Universidad Panamericana, CDMX since July 2025, where he teaches graduate-level courses in Natural Language Processing (NLP)."
+    },
+    {
+      "keywords": ["crypto", "cryptocurrency", "fintech", "bitcoin", "finance", "market"],
+      "answer": "Moein's FinTech NLP work analyzes cryptocurrency discourse on X (Twitter) using SenticNet and psycholinguistic features, correlating emotional trends with market price movements. He's published this in Q1 journals like Scientific Reports and Cognitive Computation."
+    },
+    {
+      "keywords": ["hate speech", "hate", "toxic"],
+      "answer": "Moein has worked extensively on hate speech detection across multiple languages, including Spanish (HOMOMEX 2023), Tamil and Telugu (DravidianLangTech), and English. He uses BERT, LSTM, and CNN architectures for these classification tasks."
+    },
+    {
+      "keywords": ["hope speech", "hope", "positive"],
+      "answer": "Moein researches hope speech detection — identifying supportive and encouraging content online. He published the paper 'Exploring Multidimensional Aspects of Hope Speech Computationally' in Scientific Reports (Q1) and contributed to multiple IberLEF shared tasks on hope detection."
+    },
+    {
+      "keywords": ["social support", "support detection"],
+      "answer": "Social support detection is one of Moein's main research areas. He created a bilingual dataset (English & Spanish), developed ML/DL approaches published in Heliyon and PLOS ONE (both Q1), and is the Main Organizer of the SSD Shared Task at IberLEF 2026."
+    },
+    {
+      "keywords": ["gelbukh", "lab", "ipn", "research group"],
+      "answer": "Moein is a PhD researcher at the Alexander Gelbukh Lab, part of the NLP & AI Research Group at Centro de Investigación en Computación (CIC), Instituto Politécnico Nacional (IPN) in Mexico City."
+    },
+    {
+      "keywords": ["collaborate", "collaboration", "work together", "partner"],
+      "answer": "Moein is always open to academic collaboration and research discussions in NLP, social media mining, and AI. You can reach him at moein.tash@gmail.com or connect via LinkedIn."
+    }
+  ],
+  "greetings": [
+    "Hello! I'm Moein's AI assistant. Feel free to ask me anything about Moein Tash."
+  ],
+  "offTopicResponse": "I can only answer questions related to Moein Tash. Please ask something about his background, experience, skills, or research."
+}
