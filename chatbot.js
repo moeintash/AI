@@ -173,7 +173,12 @@ function buildContextForAI() {
 // AI ANSWER (via Cloudflare Worker)
 // ==========================================
 async function aiAnswer(question) {
-  if (!CONFIG.WORKER_URL) return null;
+  if (!CONFIG.WORKER_URL) {
+    console.warn('🚨 WORKER_URL is empty! Set it in chatbot.js');
+    return null;
+  }
+  
+  console.log('🤖 Calling AI Worker:', CONFIG.WORKER_URL);
   
   try {
     const response = await fetch(CONFIG.WORKER_URL, {
@@ -185,19 +190,30 @@ async function aiAnswer(question) {
       })
     });
     
+    console.log('📡 Worker response status:', response.status);
+    
     if (!response.ok) {
-      console.warn('Worker returned error:', response.status);
+      const errText = await response.text();
+      console.error('❌ Worker returned error:', response.status, errText);
       return null;
     }
     
     const data = await response.json();
+    
     if (data.error || data.fallback) {
-      console.warn('AI fallback triggered:', data.error);
+      console.warn('⚠️ AI fallback triggered:', data.error || 'fallback flag set');
       return null;
     }
-    return data.answer || null;
+    
+    if (data.answer) {
+      console.log('✅ AI answered successfully (length:', data.answer.length, 'chars)');
+      return data.answer;
+    }
+    
+    console.warn('⚠️ Worker returned no answer');
+    return null;
   } catch (e) {
-    console.warn('AI request failed:', e);
+    console.error('❌ AI request failed:', e.message);
     return null;
   }
 }
@@ -248,12 +264,14 @@ function ruleBasedAnswer(question) {
 }
 
 // ==========================================
-// MAIN ANSWER FUNCTION
+// MAIN ANSWER FUNCTION (with source tracking)
 // ==========================================
 async function getAnswer(question) {
   const aiResponse = await aiAnswer(question);
-  if (aiResponse) return aiResponse;
-  return ruleBasedAnswer(question);
+  if (aiResponse) {
+    return { text: aiResponse, source: 'ai' };
+  }
+  return { text: ruleBasedAnswer(question), source: 'rule' };
 }
 
 // ==========================================
@@ -303,16 +321,25 @@ function addUserMessage(containerId, text) {
   container.scrollTop = container.scrollHeight;
 }
 
-function addBotMessage(containerId, text) {
+function addBotMessage(containerId, text, source) {
   const container = document.getElementById(containerId);
   if (!container) return;
+  
+  // Source badge - shows where the answer came from
+  let sourceBadge = '';
+  if (source === 'ai') {
+    sourceBadge = '<span style="display:inline-flex;align-items:center;gap:3px;background:#d1fae5;color:#065f46;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:600;margin-left:4px;" title="Answered by Gemini AI">✨ AI</span>';
+  } else if (source === 'rule') {
+    sourceBadge = '<span style="display:inline-flex;align-items:center;gap:3px;background:#fef3c7;color:#92400e;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:600;margin-left:4px;" title="Answered from saved Q&A (AI unavailable)">📋 Rule</span>';
+  }
+  
   const msg = document.createElement('div');
   msg.className = 'message bot';
   msg.innerHTML = `
     <div class="msg-avatar">🤖</div>
     <div class="msg-bubble-wrap">
       <div class="msg-content">${renderBotContent(text)}</div>
-      <div class="msg-time">${getTimeNow()}</div>
+      <div class="msg-time">${getTimeNow()}${sourceBadge}</div>
     </div>
   `;
   container.appendChild(msg);
@@ -352,9 +379,9 @@ window.sendMessage = async function() {
   input.value = '';
   showTyping('chatMessages');
   
-  const answer = await getAnswer(text);
+  const result = await getAnswer(text);
   removeTyping('chatMessages');
-  addBotMessage('chatMessages', answer);
+  addBotMessage('chatMessages', result.text, result.source);
 };
 
 window.sendFloatingMessage = async function() {
@@ -366,9 +393,9 @@ window.sendFloatingMessage = async function() {
   input.value = '';
   showTyping('floatingMessages');
   
-  const answer = await getAnswer(text);
+  const result = await getAnswer(text);
   removeTyping('floatingMessages');
-  addBotMessage('floatingMessages', answer);
+  addBotMessage('floatingMessages', result.text, result.source);
 };
 
 window.toggleFloatingChat = function() {
