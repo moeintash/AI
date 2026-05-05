@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard | Moein Tash</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafbff;
+    --bg-alt: #f3f4ff;
+    --card: #ffffff;
+    --border: #e8eaf2;
+    --primary: #7c5cff;
+    --primary-light: #a78bff;
+    --primary-bg: #f0ecff;
+    --accent: #ec4899;
+    --danger: #ef4444;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --text: #1a1a2e;
+    --text-muted: #6b7185;
+    --text-soft: #9ca0b5;
+    --shadow-md: 0 8px 30px rgba(124, 92, 255, 0.08);
+    --shadow-lg: 0 20px 60px rgba(124, 92, 255, 0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* LOGIN */
+  .login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .login-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 48px 40px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+  }
+  .login-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 8px 20px rgba(124, 92, 255, 0.4);
+  }
+  .login-box h1 {
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .login-box .subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .form-input {
+    width: 100%;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s;
+  }
+  .form-input:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.1);
+  }
+  textarea.form-input {
+    min-height: 80px;
+    resize: vertical;
+    line-height: 1.5;
+  }
+  .login-error {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: var(--danger);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    display: none;
+  }
+  .btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    font-family: inherit;
+    transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(124, 92, 255, 0.3);
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-secondary {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    box-shadow: none;
+  }
+  .btn-secondary:hover { background: var(--bg-alt); border-color: var(--primary); color: var(--primary); }
+  .btn-warning { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; }
+  .btn-danger { background: var(--danger); color: white; }
+  .btn-small { padding: 8px 14px; font-size: 13px; width: auto; }
+
+  /* DASHBOARD */
+  .dashboard { display: none; }
+  .dashboard.active { display: block; }
+
+  .top-bar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .top-bar-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .top-bar h2 {
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .top-bar-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: calc(100vh - 65px);
+  }
+
+  .sidebar {
+    background: var(--card);
+    border-right: 1px solid var(--border);
+    padding: 20px 12px;
+    position: sticky;
+    top: 65px;
+    height: calc(100vh - 65px);
+    overflow-y: auto;
+  }
+  .sidebar-section {
+    font-size: 11px;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 12px 12px 6px;
+    font-weight: 700;
+  }
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+  .sidebar-link:hover { background: var(--bg-alt); color: var(--text); }
+  .sidebar-link.active {
+    background: var(--primary-bg);
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .main-content {
+    padding: 28px 32px 80px;
+    max-width: 900px;
+  }
+
+  .page-header { margin-bottom: 24px; }
+  .page-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .page-subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  .info-box {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(251, 191, 36, 0.04));
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    color: #92400e;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .info-box-icon { font-size: 18px; flex-shrink: 0; }
+  .info-box strong { color: var(--text); }
+  .info-box code {
+    background: white;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; animation: fadeIn 0.3s; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .section-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-md);
+  }
+  .section-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .section-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .form-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+
+  .item-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+  }
+  .item-card:hover { border-color: var(--primary-light); }
+  .item-num {
+    background: var(--primary-bg);
+    color: var(--primary);
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .delete-btn {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .delete-btn:hover { background: var(--danger); color: white; }
+
+  .add-btn {
+    background: white;
+    border: 2px dashed var(--border);
+    color: var(--primary);
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .add-btn:hover { background: var(--primary-bg); border-color: var(--primary); border-style: solid; }
+
+  .pub-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+    background: var(--bg-alt);
+    padding: 4px;
+    border-radius: 10px;
+  }
+  .pub-tab {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: inherit;
+  }
+  .pub-tab.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translate(-50%, 100px);
+    background: var(--text);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 1000;
+    font-size: 14px;
+  }
+  .toast.show { transform: translate(-50%, 0); opacity: 1; }
+  .toast.success { background: var(--success); }
+
+  .quartile-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .q1 { background: #d1fae5; color: #065f46; }
+  .q2 { background: #fef3c7; color: #92400e; }
+  .q4 { background: #fee2e2; color: #991b1b; }
+
+  .link-icon-input {
+    position: relative;
+  }
+  .link-icon-input input {
+    padding-left: 36px;
+  }
+  .link-icon-input::before {
+    content: '🔗';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    z-index: 1;
+  }
+
+  .pdf-help {
+    background: var(--primary-bg);
+    border: 1px solid rgba(124, 92, 255, 0.2);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .pdf-help strong { color: var(--primary); }
+  .pdf-help code {
+    background: white;
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: var(--primary);
+  }
+
+  .lang-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .form-row, .form-row-3 { grid-template-columns: 1fr; }
+    .top-bar { padding: 12px 16px; }
+    .top-bar h2 { font-size: 15px; }
+    .top-bar-actions .btn-small { padding: 7px 10px; font-size: 12px; }
+    .main-content { padding: 20px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-icon">🔐</div>
+    <h1>Dashboard Login</h1>
+    <p class="subtitle">Enter your password to manage your portfolio</p>
+    <div class="login-error" id="loginError">Wrong password. Try again.</div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="passwordInput" class="form-input" placeholder="••••••••" onkeypress="if(event.key==='Enter') login()">
+    </div>
+    <button class="btn" onclick="login()">Sign In</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="top-bar-logo">M</div>
+      <h2>Portfolio Dashboard</h2>
+    </div>
+    <div class="top-bar-actions">
+      <button class="btn btn-secondary btn-small" onclick="loadDataFromFile()">🔄 Reload</button>
+      <button class="btn btn-warning btn-small" onclick="exportJSON()">⬇️ Export JSON</button>
+      <button class="btn btn-danger btn-small" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">Manage</div>
+      <div class="sidebar-link active" onclick="switchTab('personal')" data-tab="personal">👤 Personal</div>
+      <div class="sidebar-link" onclick="switchTab('education')" data-tab="education">🎓 Education</div>
+      <div class="sidebar-link" onclick="switchTab('experience')" data-tab="experience">💼 Experience</div>
+      <div class="sidebar-link" onclick="switchTab('publications')" data-tab="publications">📚 Publications</div>
+      <div class="sidebar-link" onclick="switchTab('projects')" data-tab="projects">🚀 Projects</div>
+      <div class="sidebar-link" onclick="switchTab('skills')" data-tab="skills">⚙️ Skills</div>
+      <div class="sidebar-link" onclick="switchTab('achievements')" data-tab="achievements">🏆 Achievements</div>
+      <div class="sidebar-link" onclick="switchTab('chatbot')" data-tab="chatbot">🤖 Chatbot Q&A</div>
+      <div class="sidebar-section" style="margin-top:20px;">Account</div>
+      <div class="sidebar-link" onclick="switchTab('settings')" data-tab="settings">⚙️ Settings</div>
+    </aside>
+
+    <main class="main-content">
+      <div class="info-box">
+        <span class="info-box-icon">💡</span>
+        <div>
+          <strong>How to publish your changes:</strong>
+          Click <strong>"⬇️ Export JSON"</strong> top-right, then upload the downloaded <code>data.json</code> to your GitHub repo. Site updates in 1-3 minutes.
+        </div>
+      </div>
+
+      <!-- PERSONAL -->
+      <div class="tab-content active" id="tab-personal">
+        <div class="page-header">
+          <h1 class="page-title">Personal Info</h1>
+          <p class="page-subtitle">Basic info shown in the hero and used by the chatbot</p>
+        </div>
+        <div class="section-card">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Display Name</label>
+              <input type="text" id="p-name" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="p-fullName" class="form-input">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="p-title" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Tagline / Bio</label>
+            <textarea id="p-tagline" class="form-input"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="p-email" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" id="p-location" class="form-input">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Languages Summary (for chatbot)</label>
+            <input type="text" id="p-languages" class="form-input">
+          </div>
+        </div>
+        <div class="section-card">
+          <div class="section-card-title">🔗 Links</div>
+          <div class="form-group">
+            <label>Resume Link (where "View Resume" button goes)</label>
+            <input type="url" id="p-resumeLink" class="form-input">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>LinkedIn URL</label>
+              <input type="url" id="p-linkedin" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>GitHub URL</label>
+              <input type="url" id="p-github" class="form-input">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Google Scholar URL</label>
+            <input type="url" id="p-scholar" class="form-input">
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="tab-content" id="tab-education">
+        <div class="page-header">
+          <h1 class="page-title">Education</h1>
+          <p class="page-subtitle">Your degrees and academic background</p>
+        </div>
+        <div id="educationList"></div>
+        <button class="add-btn" onclick="addEducation()">➕ Add Education</button>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="tab-content" id="tab-experience">
+        <div class="page-header">
+          <h1 class="page-title">Experience</h1>
+          <p class="page-subtitle">Your work and research positions</p>
+        </div>
+        <div id="experienceList"></div>
+        <button class="add-btn" onclick="addExperience()">➕ Add Position</button>
+      </div>
+
+      <!-- PUBLICATIONS -->
+      <div class="tab-content" id="tab-publications">
+        <div class="page-header">
+          <h1 class="page-title">Publications</h1>
+          <p class="page-subtitle">Add link to PDF (Google Scholar, ResearchGate, journal page, or arxiv)</p>
+        </div>
+        <div class="pdf-help">
+          🔗 <strong>How to get PDF links:</strong><br>
+          • <strong>Google Scholar:</strong> Open paper → click PDF icon → copy URL<br>
+          • <strong>ResearchGate:</strong> Open paper page → "Download" button → copy URL<br>
+          • <strong>Journal:</strong> Use the official DOI link, e.g. <code>https://www.nature.com/articles/...</code><br>
+          • <strong>arXiv:</strong> Copy the abs URL, e.g. <code>https://arxiv.org/abs/2401.12345</code>
+        </div>
+        <div class="pub-tabs">
+          <button class="pub-tab active" onclick="switchPubTab('published')">📄 Published</button>
+          <button class="pub-tab" onclick="switchPubTab('underReview')">📝 Under Review</button>
+          <button class="pub-tab" onclick="switchPubTab('conferences')">🎤 Conferences</button>
+        </div>
+        <div id="pub-published" class="pub-section"></div>
+        <div id="pub-underReview" class="pub-section" style="display:none;"></div>
+        <div id="pub-conferences" class="pub-section" style="display:none;"></div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="tab-content" id="tab-projects">
+        <div class="page-header">
+          <h1 class="page-title">Projects</h1>
+          <p class="page-subtitle">Your projects and technical work</p>
+        </div>
+        <div id="projectsList"></div>
+        <button class="add-btn" onclick="addProject()">➕ Add Project</button>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="tab-content" id="tab-skills">
+        <div class="page-header">
+          <h1 class="page-title">Skills & Languages</h1>
+          <p class="page-subtitle">Technical skills, NLP expertise, and spoken languages</p>
+        </div>
+        <div class="section-card">
+          <div class="section-card-title">⚙️ Technical Skills</div>
+          <p style="color:var(--text-muted);font-size:12px;margin-bottom:8px;">Comma-separated</p>
+          <textarea id="s-technical" class="form-input"></textarea>
+        </div>
+        <div class="section-card">
+          <div class="section-card-title">🧠 NLP Expertise</div>
+          <p style="color:var(--text-muted);font-size:12px;margin-bottom:8px;">Comma-separated</p>
+          <textarea id="s-nlp" class="form-input"></textarea>
+        </div>
+        <div class="section-card">
+          <div class="section-card-title">🌐 Spoken Languages</div>
+          <div id="languagesList"></div>
+          <button class="add-btn" onclick="addLanguage()" style="margin-top:8px;">➕ Add Language</button>
+        </div>
+      </div>
+
+      <!-- ACHIEVEMENTS -->
+      <div class="tab-content" id="tab-achievements">
+        <div class="page-header">
+          <h1 class="page-title">Achievements</h1>
+          <p class="page-subtitle">Awards, scholarships, and recognitions</p>
+        </div>
+        <div id="achievementsList"></div>
+        <button class="add-btn" onclick="addAchievement()">➕ Add Achievement</button>
+      </div>
+
+      <!-- CHATBOT Q&A -->
+      <div class="tab-content" id="tab-chatbot">
+        <div class="page-header">
+          <h1 class="page-title">Chatbot Q&A</h1>
+          <p class="page-subtitle">Custom Q&A pairs for the rule-based fallback</p>
+        </div>
+        <div class="info-box" style="background:rgba(124,92,255,0.06);border-color:rgba(124,92,255,0.2);color:var(--text);">
+          <span class="info-box-icon">💡</span>
+          <div>
+            <strong>How it works:</strong> The AI (Gemini) automatically uses ALL info from other tabs (Personal, Education, Publications, etc.). These Q&A pairs are only used as a backup when AI is unavailable.
+          </div>
+        </div>
+        <div class="section-card">
+          <div class="form-group">
+            <label>👋 Welcome Message (first message visitors see)</label>
+            <textarea id="greeting-text" class="form-input"></textarea>
+          </div>
+          <div class="form-group">
+            <label>🚫 Off-Topic Reply (when someone asks unrelated questions)</label>
+            <textarea id="offtopic-text" class="form-input"></textarea>
+          </div>
+        </div>
+        <h3 style="margin:24px 0 12px;font-size:16px;">🧠 Custom Q&A Pairs</h3>
+        <div id="qaList"></div>
+        <button class="add-btn" onclick="addQAItem()">➕ Add Q&A</button>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="tab-content" id="tab-settings">
+        <div class="page-header">
+          <h1 class="page-title">Settings</h1>
+          <p class="page-subtitle">Manage your dashboard account</p>
+        </div>
+        
+        <div class="section-card">
+          <div class="section-card-title">🔐 Change Password</div>
+          <p style="color:var(--text-muted);font-size:13px;margin-bottom:16px;line-height:1.5;">
+            Use a strong password (at least 8 characters with letters, numbers, and symbols).
+            After changing, you'll need to upload the updated <code style="background:var(--bg-alt);padding:2px 6px;border-radius:4px;color:var(--primary);font-weight:600;">dashboard.html</code> to GitHub.
+          </p>
+          
+          <div class="form-group">
+            <label>New Password</label>
+            <input type="password" id="newPassword" class="form-input" placeholder="Enter new password" autocomplete="new-password">
+          </div>
+          <div class="form-group">
+            <label>Confirm New Password</label>
+            <input type="password" id="confirmPassword" class="form-input" placeholder="Re-enter new password" autocomplete="new-password">
+          </div>
+          
+          <button class="btn" onclick="changePassword()" style="margin-top:8px;">🔐 Generate Updated Dashboard</button>
+          
+          <div id="passwordResult" style="display:none;margin-top:20px;">
+            <div style="background:linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));border:1px solid rgba(16, 185, 129, 0.3);border-radius:12px;padding:16px;margin-bottom:16px;">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+                <span style="font-size:20px;">✅</span>
+                <strong style="color:#065f46;">Password updated successfully!</strong>
+              </div>
+              <p style="color:var(--text-muted);font-size:13px;line-height:1.6;margin:0;">
+                A new <strong>dashboard.html</strong> has been downloaded with your new password. Upload it to your GitHub repo (replace the existing <code style="background:white;padding:1px 6px;border-radius:4px;color:var(--primary);">dashboard.html</code>).
+              </p>
+            </div>
+            <div style="background:rgba(245, 158, 11, 0.08);border:1px solid rgba(245, 158, 11, 0.25);border-radius:12px;padding:14px;">
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <span style="font-size:18px;flex-shrink:0;">⚠️</span>
+                <div style="font-size:13px;color:#92400e;line-height:1.6;">
+                  <strong style="color:var(--text);">Important:</strong> Until you upload the new file to GitHub, the OLD password still works on your live site. Make sure to upload it right away!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="toast" id="toast">Saved!</div>
+
+<script>
+const ADMIN_PASSWORD = "moein2026";  // Change this!
+
+let data = null;
+let originalDataStr = null;
+let currentPubTab = 'published';
+
+// AUTH
+function login() {
+  const pw = document.getElementById('passwordInput').value;
+  if (pw === ADMIN_PASSWORD) {
+    sessionStorage.setItem('moein_admin', 'true');
+    showDashboard();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+  }
+}
+function logout() {
+  sessionStorage.removeItem('moein_admin');
+  location.reload();
+}
+function showDashboard() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('dashboard').classList.add('active');
+  loadDataFromFile();
+}
+if (sessionStorage.getItem('moein_admin') === 'true') showDashboard();
+
+// LOAD DATA
+async function loadDataFromFile() {
+  try {
+    const res = await fetch('data.json?t=' + Date.now());
+    data = await res.json();
+    originalDataStr = JSON.stringify(data);
+    renderAll();
+    showToast('✅ Data loaded!', 'success');
+  } catch (e) {
+    alert('Error loading data.json. Make sure the file is in the same folder.');
+    console.error(e);
+  }
+}
+
+// RENDER
+function renderAll() {
+  renderPersonal();
+  renderEducation();
+  renderExperience();
+  renderPublications();
+  renderProjects();
+  renderSkills();
+  renderAchievements();
+  renderChatbot();
+}
+
+function renderPersonal() {
+  const p = data.personal;
+  ['name','fullName','title','tagline','email','location','languages','resumeLink','linkedin','github','scholar'].forEach(key => {
+    const el = document.getElementById('p-' + key);
+    if (el) {
+      el.value = p[key] || '';
+      el.oninput = e => p[key] = e.target.value;
+    }
+  });
+}
+
+// EDUCATION
+function renderEducation() {
+  const list = document.getElementById('educationList');
+  list.innerHTML = '';
+  data.education.forEach((edu, i) => {
+    const div = document.createElement('div');
+    div.className = 'section-card';
+    div.innerHTML = `
+      <div class="section-card-header">
+        <div class="section-card-title"><span class="item-num">${i+1}</span> Entry</div>
+        <button class="delete-btn" onclick="deleteEducation(${i})">🗑️</button>
+      </div>
+      <div class="form-group">
+        <label>Degree</label>
+        <input type="text" class="form-input" value="${esc(edu.degree)}" oninput="data.education[${i}].degree=this.value">
+      </div>
+      <div class="form-group">
+        <label>Institution</label>
+        <input type="text" class="form-input" value="${esc(edu.institution)}" oninput="data.education[${i}].institution=this.value">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Period</label>
+          <input type="text" class="form-input" value="${esc(edu.period)}" oninput="data.education[${i}].period=this.value">
+        </div>
+        <div class="form-group">
+          <label>Note (optional)</label>
+          <input type="text" class="form-input" value="${esc(edu.note||'')}" oninput="data.education[${i}].note=this.value">
+        </div>
+      </div>
+    `;
+    list.appendChild(div);
+  });
+}
+function addEducation() {
+  data.education.push({ degree:'New Degree', institution:'', period:'', note:'' });
+  renderEducation();
+}
+function deleteEducation(i) {
+  if (confirm('Delete this entry?')) { data.education.splice(i,1); renderEducation(); }
+}
+
+// EXPERIENCE
+function renderExperience() {
+  const list = document.getElementById('experienceList');
+  list.innerHTML = '';
+  data.experience.forEach((exp, i) => {
+    const div = document.createElement('div');
+    div.className = 'section-card';
+    div.innerHTML = `
+      <div class="section-card-header">
+        <div class="section-card-title"><span class="item-num">${i+1}</span> Position</div>
+        <button class="delete-btn" onclick="deleteExperience(${i})">🗑️</button>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Role</label>
+          <input type="text" class="form-input" value="${esc(exp.role)}" oninput="data.experience[${i}].role=this.value">
+        </div>
+        <div class="form-group">
+          <label>Company</label>
+          <input type="text" class="form-input" value="${esc(exp.company)}" oninput="data.experience[${i}].company=this.value">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Period</label>
+        <input type="text" class="form-input" value="${esc(exp.period)}" oninput="data.experience[${i}].period=this.value">
+      </div>
+      <div class="form-group">
+        <label>Details</label>
+        <textarea class="form-input" oninput="data.experience[${i}].details=this.value">${esc(exp.details)}</textarea>
+      </div>
+    `;
+    list.appendChild(div);
+  });
+}
+function addExperience() {
+  data.experience.push({ role:'New Role', company:'', period:'', details:'' });
+  renderExperience();
+}
+function deleteExperience(i) {
+  if (confirm('Delete this entry?')) { data.experience.splice(i,1); renderExperience(); }
+}
+
+// PUBLICATIONS
+function switchPubTab(tab) {
+  currentPubTab = tab;
+  document.querySelectorAll('.pub-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.pub-section').forEach(s => s.style.display = 'none');
+  document.getElementById('pub-' + tab).style.display = 'block';
+}
+function renderPublications() {
+  ['published','underReview','conferences'].forEach(type => {
+    const list = document.getElementById('pub-' + type);
+    list.innerHTML = '';
+    data.publications[type].forEach((pub, i) => {
+      const div = document.createElement('div');
+      div.className = 'section-card';
+      let badge = '';
+      if (type === 'published' && pub.quartile) {
+        const q = pub.quartile.toLowerCase();
+        badge = `<span class="quartile-badge ${q}">${pub.quartile}${pub.impactFactor ? ' · IF '+pub.impactFactor : ''}</span>`;
+      }
+      let extraFields = '';
+      if (type === 'published') {
+        extraFields = `
+          <div class="form-row-3">
+            <div class="form-group">
+              <label>Quartile</label>
+              <input type="text" class="form-input" value="${esc(pub.quartile||'')}" placeholder="Q1, Q2..." oninput="data.publications.${type}[${i}].quartile=this.value">
+            </div>
+            <div class="form-group">
+              <label>Impact Factor</label>
+              <input type="number" step="0.1" class="form-input" value="${pub.impactFactor||''}" oninput="data.publications.${type}[${i}].impactFactor=parseFloat(this.value)||null">
+            </div>
+            <div class="form-group">
+              <label>Year</label>
+              <input type="text" class="form-input" value="${esc(pub.year||'')}" oninput="data.publications.${type}[${i}].year=this.value">
+            </div>
+          </div>
+        `;
+      }
+      div.innerHTML = `
+        <div class="section-card-header">
+          <div class="section-card-title"><span class="item-num">${i+1}</span> ${badge}</div>
+          <button class="delete-btn" onclick="deletePublication('${type}', ${i})">🗑️</button>
+        </div>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-input" value="${esc(pub.title)}" oninput="data.publications.${type}[${i}].title=this.value">
+        </div>
+        <div class="form-group">
+          <label>Authors</label>
+          <input type="text" class="form-input" value="${esc(pub.authors)}" oninput="data.publications.${type}[${i}].authors=this.value">
+        </div>
+        <div class="form-group">
+          <label>Venue / Journal</label>
+          <input type="text" class="form-input" value="${esc(pub.venue)}" oninput="data.publications.${type}[${i}].venue=this.value">
+        </div>
+        ${extraFields}
+        <div class="form-group" style="margin-bottom:0;">
+          <label>🔗 PDF Link (Google Scholar, ResearchGate, DOI, arxiv...)</label>
+          <input type="url" class="form-input" placeholder="https://..." value="${esc(pub.link||'')}" oninput="data.publications.${type}[${i}].link=this.value">
+        </div>
+      `;
+      list.appendChild(div);
+    });
+  });
+}
+function addPublication() {
+  const type = currentPubTab;
+  const newPub = { title:'New Paper', authors:'', venue:'', link:'' };
+  if (type === 'published') {
+    newPub.quartile = 'Q1';
+    newPub.impactFactor = null;
+    newPub.year = new Date().getFullYear().toString();
+  }
+  data.publications[type].push(newPub);
+  renderPublications();
+  // Re-show current tab section
+  document.querySelectorAll('.pub-section').forEach(s => s.style.display = 'none');
+  document.getElementById('pub-' + type).style.display = 'block';
+}
+function deletePublication(type, i) {
+  if (confirm('Delete this publication?')) { data.publications[type].splice(i,1); renderPublications(); document.getElementById('pub-' + type).style.display = 'block'; }
+}
+// Add buttons for each pub section
+document.addEventListener('click', function(e) {
+  if (e.target && e.target.id === 'addPubBtn') addPublication();
+});
+
+// PROJECTS
+function renderProjects() {
+  const list = document.getElementById('projectsList');
+  list.innerHTML = '';
+  data.projects.forEach((proj, i) => {
+    const div = document.createElement('div');
+    div.className = 'section-card';
+    div.innerHTML = `
+      <div class="section-card-header">
+        <div class="section-card-title"><span class="item-num">${i+1}</span> Project</div>
+        <button class="delete-btn" onclick="deleteProject(${i})">🗑️</button>
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-input" value="${esc(proj.title)}" oninput="data.projects[${i}].title=this.value">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-input" oninput="data.projects[${i}].description=this.value">${esc(proj.description)}</textarea>
+      </div>
+      <div class="form-group">
+        <label>Tags (comma-separated)</label>
+        <input type="text" class="form-input" value="${esc((proj.tags||[]).join(', '))}" oninput="data.projects[${i}].tags=this.value.split(',').map(t=>t.trim()).filter(Boolean)">
+      </div>
+      <div class="form-group" style="margin-bottom:0;">
+        <label>🔗 Project Link (GitHub, demo, paper...)</label>
+        <input type="url" class="form-input" placeholder="https://..." value="${esc(proj.link||'')}" oninput="data.projects[${i}].link=this.value">
+      </div>
+    `;
+    list.appendChild(div);
+  });
+}
+function addProject() {
+  data.projects.push({ title:'New Project', description:'', tags:[], link:'' });
+  renderProjects();
+}
+function deleteProject(i) {
+  if (confirm('Delete this project?')) { data.projects.splice(i,1); renderProjects(); }
+}
+
+// SKILLS
+function renderSkills() {
+  document.getElementById('s-technical').value = (data.skills.technical||[]).join(', ');
+  document.getElementById('s-nlp').value = (data.skills.nlp||[]).join(', ');
+  document.getElementById('s-technical').oninput = e => data.skills.technical = e.target.value.split(',').map(s=>s.trim()).filter(Boolean);
+  document.getElementById('s-nlp').oninput = e => data.skills.nlp = e.target.value.split(',').map(s=>s.trim()).filter(Boolean);
+  renderLanguages();
+}
+function renderLanguages() {
+  const list = document.getElementById('languagesList');
+  list.innerHTML = '';
+  (data.skills.languages||[]).forEach((lang, i) => {
+    const div = document.createElement('div');
+    div.className = 'lang-row';
+    div.innerHTML = `
+      <input type="text" class="form-input" placeholder="Language" value="${esc(lang.name)}" oninput="data.skills.languages[${i}].name=this.value">
+      <input type="text" class="form-input" placeholder="Level" value="${esc(lang.level)}" oninput="data.skills.languages[${i}].level=this.value">
+      <button class="delete-btn" onclick="deleteLanguage(${i})">🗑️</button>
+    `;
+    list.appendChild(div);
+  });
+}
+function addLanguage() {
+  if (!data.skills.languages) data.skills.languages = [];
+  data.skills.languages.push({ name:'', level:'' });
+  renderLanguages();
+}
+function deleteLanguage(i) {
+  data.skills.languages.splice(i,1);
+  renderLanguages();
+}
+
+// ACHIEVEMENTS
+function renderAchievements() {
+  const list = document.getElementById('achievementsList');
+  list.innerHTML = '';
+  (data.achievements||[]).forEach((ach, i) => {
+    const div = document.createElement('div');
+    div.className = 'item-card';
+    div.style.display = 'flex';
+    div.style.gap = '12px';
+    div.style.alignItems = 'center';
+    div.innerHTML = `
+      <span class="item-num">${i+1}</span>
+      <input type="text" class="form-input" style="flex:1;" value="${esc(ach)}" oninput="data.achievements[${i}]=this.value">
+      <button class="delete-btn" onclick="deleteAchievement(${i})">🗑️</button>
+    `;
+    list.appendChild(div);
+  });
+}
+function addAchievement() {
+  if (!data.achievements) data.achievements = [];
+  data.achievements.push('New achievement');
+  renderAchievements();
+}
+function deleteAchievement(i) {
+  if (confirm('Delete?')) { data.achievements.splice(i,1); renderAchievements(); }
+}
+
+// CHATBOT Q&A
+function renderChatbot() {
+  document.getElementById('greeting-text').value = (data.greetings && data.greetings[0]) || '';
+  document.getElementById('greeting-text').oninput = e => {
+    if (!data.greetings) data.greetings = [];
+    data.greetings[0] = e.target.value;
+  };
+  document.getElementById('offtopic-text').value = data.offTopicResponse || '';
+  document.getElementById('offtopic-text').oninput = e => data.offTopicResponse = e.target.value;
+  
+  renderQAList();
+}
+function renderQAList() {
+  const list = document.getElementById('qaList');
+  list.innerHTML = '';
+  (data.chatbotKnowledge||[]).forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'section-card';
+    div.innerHTML = `
+      <div class="section-card-header">
+        <div class="section-card-title"><span class="item-num">${i+1}</span> Q&A</div>
+        <button class="delete-btn" onclick="deleteQA(${i})">🗑️</button>
+      </div>
+      <div class="form-group">
+        <label>Keywords (comma-separated)</label>
+        <input type="text" class="form-input" value="${esc((item.keywords||[]).join(', '))}" oninput="data.chatbotKnowledge[${i}].keywords=this.value.split(',').map(s=>s.trim()).filter(Boolean)">
+      </div>
+      <div class="form-group" style="margin-bottom:0;">
+        <label>Answer</label>
+        <textarea class="form-input" oninput="data.chatbotKnowledge[${i}].answer=this.value">${esc(item.answer)}</textarea>
+      </div>
+    `;
+    list.appendChild(div);
+  });
+}
+function addQAItem() {
+  if (!data.chatbotKnowledge) data.chatbotKnowledge = [];
+  data.chatbotKnowledge.push({ keywords:['new'], answer:'Type the answer here...' });
+  renderQAList();
+}
+function deleteQA(i) {
+  if (confirm('Delete this Q&A?')) { data.chatbotKnowledge.splice(i,1); renderQAList(); }
+}
+
+// EXPORT
+function exportJSON() {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'data.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  originalDataStr = JSON.stringify(data);
+  showToast('✅ Downloaded! Now upload it to GitHub.', 'success');
+}
+
+// TABS
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector(`.sidebar-link[data-tab="${name}"]`).classList.add('active');
+  
+  // For publications, also add the "Add" button at the bottom
+  if (name === 'publications') {
+    setTimeout(() => {
+      // Remove existing add button if any
+      const oldBtn = document.querySelector('.add-pub-btn');
+      if (oldBtn) oldBtn.remove();
+      const btn = document.createElement('button');
+      btn.className = 'add-btn add-pub-btn';
+      btn.style.marginTop = '8px';
+      btn.textContent = '➕ Add Publication';
+      btn.onclick = addPublication;
+      document.getElementById('tab-publications').appendChild(btn);
+    }, 50);
+  }
+}
+
+// HELPERS
+function esc(s) {
+  if (s === null || s === undefined) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (type === 'success' ? ' success' : '');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// Warn before leaving with unsaved changes
+window.addEventListener('beforeunload', (e) => {
+  if (data && JSON.stringify(data) !== originalDataStr) {
+    e.preventDefault();
+    e.returnValue = 'Unsaved changes! Did you export the JSON?';
+  }
+});
+
+// ==========================================
+// CHANGE PASSWORD
+// ==========================================
+function changePassword() {
+  const newPw = document.getElementById('newPassword').value;
+  const confirmPw = document.getElementById('confirmPassword').value;
+  
+  // Validation
+  if (!newPw || !confirmPw) {
+    alert('⚠️ Please fill in both password fields.');
+    return;
+  }
+  if (newPw.length < 6) {
+    alert('⚠️ Password must be at least 6 characters long.');
+    return;
+  }
+  if (newPw !== confirmPw) {
+    alert('⚠️ Passwords do not match. Please try again.');
+    return;
+  }
+  if (newPw.includes('"') || newPw.includes('\\')) {
+    alert('⚠️ Password cannot contain quotes (") or backslashes (\\).');
+    return;
+  }
+  
+  // Get current dashboard HTML and replace the password
+  const currentHTML = document.documentElement.outerHTML;
+  const fullDoc = '<!DOCTYPE html>\n' + currentHTML;
+  
+  // Replace ADMIN_PASSWORD line
+  const updated = fullDoc.replace(
+    /const ADMIN_PASSWORD = "[^"]*";/,
+    `const ADMIN_PASSWORD = "${newPw}";`
+  );
+  
+  // Verify the replacement happened
+  if (updated === fullDoc) {
+    alert('⚠️ Could not update password in the file. Please report this issue.');
+    return;
+  }
+  
+  // Download new dashboard.html
+  const blob = new Blob([updated], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'dashboard.html';
+  a.click();
+  URL.revokeObjectURL(url);
+  
+  // Clear the password fields
+  document.getElementById('newPassword').value = '';
+  document.getElementById('confirmPassword').value = '';
+  
+  // Show success message
+  document.getElementById('passwordResult').style.display = 'block';
+  
+  // Scroll to result
+  setTimeout(() => {
+    document.getElementById('passwordResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 100);
+  
+  showToast('🔐 New dashboard downloaded! Upload it to GitHub.', 'success');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+{
+  "personal": {
+    "name": "Moein Tash",
+    "fullName": "Moein Shahiki Tash",
+    "title": "PhD in Artificial Intelligence (NLP)",
+    "tagline": "I am passionate about Natural Language Processing, Deep Learning and building intelligent solutions that make a real impact.",
+    "email": "moein.tash@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/moein-shahiki-tash-296011149/",
+    "github": "https://github.com/moein-tash",
+    "scholar": "https://scholar.google.com/citations?hl=en&user=kj13UmQAAAAJ",
+    "resumeLink": "https://moeintash.github.io/Home-page/#home",
+    "currentPosition": "Lecturer at Universidad Panamericana, CDMX (since July 2025)",
+    "currentResearchPosition": "PhD Researcher at Gelbukh Lab, IPN Mexico City (2022-2026)",
+    "location": "Mexico City, Mexico",
+    "languages": "Fluent in English, Native in Persian and Baluchi, Intermediate Spanish"
+  },
+  "education": [
+    {
+      "degree": "PhD in Computer Science (Natural Language Processing)",
+      "institution": "Centro de Investigación en Computación (CIC), Instituto Politécnico Nacional (IPN), Mexico City",
+      "period": "2022 – 2026",
+      "note": "Researcher at Gelbukh Lab (NLP & AI Research Group)"
+    },
+    {
+      "degree": "M.Sc. in Computer Science",
+      "institution": "University of Sistan and Baluchestan, Iran",
+      "period": "2018 – 2021",
+      "note": "Graduated with Distinction"
+    },
+    {
+      "degree": "B.Sc. in Computer Science",
+      "institution": "University of Sistan and Baluchestan, Iran",
+      "period": "2012 – 2017",
+      "note": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Lecturer",
+      "company": "Panamericana University, CDMX",
+      "period": "July 2025 – Present",
+      "details": "Teaching graduate-level courses in Natural Language Processing (NLP)."
+    },
+    {
+      "role": "Researcher",
+      "company": "Alexander Gelbukh Lab, IPN",
+      "period": "August 2022 – 2026",
+      "details": "Built a chatbot with Streamlit, LangChain, and FAISS. Created social support dataset in English and Spanish. Applied deep learning to hate/hope speech and sentiment analysis. Trained/deployed NLP models on Azure ML."
+    },
+    {
+      "role": "Machine Learning Engineer",
+      "company": "Lidoma",
+      "period": "April 2019 – July 2022",
+      "details": "Built ML models for NLP tasks using TensorFlow and Scikit-learn. Performed exploratory data analysis to guide predictive modeling."
+    },
+    {
+      "role": "Python Developer",
+      "company": "Hi-Web",
+      "period": "December 2017 – December 2018",
+      "details": "Processed and analyzed data using Pandas and NumPy. Automated data pipelines for retrieval and cleaning."
+    }
+  ],
+  "publications": {
+    "published": [
+      {
+        "title": "Psycholinguistic and Emotion Analysis of Cryptocurrency Discourse on X platform",
+        "authors": "MS Tash, O Kolesnikova, Z Ahani, G Sidorov",
+        "venue": "Scientific Reports",
+        "quartile": "Q1",
+        "impactFactor": 3.8,
+        "year": "2024",
+        "link": ""
+      },
+      {
+        "title": "Analyzing Emotional Trends from X Platform Using SenticNet: A Comparative Analysis with Cryptocurrency Price",
+        "authors": "M Shahiki Tash, Z Ahani, M Tash, O Kolesnikova, G Sidorov",
+        "venue": "Cognitive Computation",
+        "quartile": "Q1",
+        "impactFactor": 4.3,
+        "year": "2024",
+        "link": ""
+      },
+      {
+        "title": "Exploring Multidimensional Aspects of Hope Speech Computationally: A Psycholinguistic and Emotional Perspective",
+        "authors": "M Arif, M Shahiki Tash, A Jamshidi, F Ullah, I Ameer, J Kalita, A Gelbukh",
+        "venue": "Scientific Reports",
+        "quartile": "Q1",
+        "impactFactor": 3.8,
+        "year": "2024",
+        "link": ""
+      },
+      {
+        "title": "Utilizing deep learning models for the identification of enhancers and super-enhancers based on genomic and epigenomic features",
+        "authors": "Z Ahani, M Shahiki Tash, Y Ledo Mezquita, J Angel",
+        "venue": "Journal of Intelligent & Fuzzy Systems",
+        "quartile": "Q2",
+        "impactFactor": 1.7,
+        "year": "2024",
+        "link": ""
+      },
+      {
+        "title": "Advanced Machine Learning Techniques for Social Support Detection on Social Media",
+        "authors": "O Kolesnikova, MS Tash, Z Ahani, A Agrawal, R Monroy, G Sidorov",
+        "venue": "Heliyon",
+        "quartile": "Q1",
+        "impactFactor": 3.4,
+        "year": "2024",
+        "link": ""
+      },
+      {
+        "title": "Stress Detection on Code-Mixed Texts in Dravidian Languages using Machine Learning",
+        "authors": "L Ramos, M Shahiki-Tash, Z Ahani, A Eponon, O Kolesnikova, H Calvo",
+        "venue": "Computación y Sistemas",
+        "quartile": "Q4",
+        "impactFactor": 0.6,
+        "year": "2024",
+        "link": ""
+      },
+      {
+        "title": "Social Support Detection from Social Media Texts",
+        "authors": "Z Ahani, MS Tash, F Balouchzahi, L Ramos, G Sidorov, A Gelbukh, R Monroy",
+        "venue": "PLOS ONE",
+        "quartile": "Q1",
+        "impactFactor": 2.9,
+        "year": "2024",
+        "link": ""
+      },
+      {
+        "title": "Evaluating the capability of base and large-scale language models for multilingual sarcasm detection",
+        "authors": "Girma Yohannis Bade, Olga Kolesnikova, Jose Luis Oropeza, Moein Shahiki Tash",
+        "venue": "PeerJ Computer Science",
+        "quartile": "Q2",
+        "impactFactor": null,
+        "year": "2025",
+        "link": ""
+      }
+    ],
+    "underReview": [
+      {
+        "title": "Online Social Support Detection in Spanish Social Media Texts",
+        "authors": "MS Tash, L Ramos, Z Ahani, R Monroy, H Calvo, G Sidorov",
+        "venue": "Q1 Journal",
+        "link": ""
+      },
+      {
+        "title": "Decoding Market Emotions in Cryptocurrency Tweets via Predictive Statement Classification with Machine Learning and Transformers",
+        "authors": "MS Tash, Z Ahani, M Tash, O Kolesnikova, G Sidorov",
+        "venue": "Q1 Journal",
+        "link": ""
+      },
+      {
+        "title": "Knowledge Compression via Question Generation: Enhancing Multihop Document Retrieval without Fine-tuning",
+        "authors": "MS Tash et al.",
+        "venue": "Q1 Journal",
+        "link": ""
+      },
+      {
+        "title": "Analyzing Cultural, Linguistic, and Social Differences in Types of Support in English and Spanish Social Media Comments",
+        "authors": "MS Tash et al.",
+        "venue": "Q2 Journal",
+        "link": ""
+      }
+    ],
+    "conferences": [
+      {
+        "title": "Word level language identification in code-mixed Kannada-English texts using traditional machine learning algorithms",
+        "authors": "MS Tash, Z Ahani, A Tonja, M Gemeda, N Hussain, O Kolesnikova",
+        "venue": "ICON 2022",
+        "link": ""
+      },
+      {
+        "title": "Lidoma at HOPE2023IberLEF: Hope speech detection using lexical features and CNNs",
+        "authors": "M Shahiki-Tash, J Armenta-Segura, O Kolesnikova, G Sidorov, A Gelbukh",
+        "venue": "IberLEF 2023",
+        "link": ""
+      },
+      {
+        "title": "Lidoma at HOMOMEX2023 IberLEF: Hate speech detection with BERT",
+        "authors": "M Shahiki-Tash, J Armenta-Segura, Z Ahani, O Kolesnikova, G Sidorov",
+        "venue": "IberLEF 2023",
+        "link": ""
+      },
+      {
+        "title": "Lidoma@ DravidianLangTech: Lexical features and sentiment in Tamil/Tulu",
+        "authors": "M Tash, J Armenta-Segura, Z Ahani, O Kolesnikova, G Sidorov",
+        "venue": "DravidianLangTech 2023",
+        "link": ""
+      },
+      {
+        "title": "Zavira@ DravidianLangTech 2024: Telugu hate speech detection using LSTM",
+        "authors": "Z Ahani, M Tash, M Zamir, I Gelbukh, A Gelbukh",
+        "venue": "DravidianLangTech 2024 (ACL)",
+        "link": ""
+      },
+      {
+        "title": "Lidoma@ LT-EDI 2024: Tamil hate speech detection in migration discourse",
+        "authors": "M Tash, Z Ahani, M Zamir, O Kolesnikova, G Sidorov",
+        "venue": "LT-EDI 2024 (ACL)",
+        "link": ""
+      },
+      {
+        "title": "Multiclass hope speech detection through transformer methods",
+        "authors": "Z Ahani, MS Tash, M Tash, A Gelbukh, I Gelbukh",
+        "venue": "IberLEF 2023",
+        "link": ""
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "URL-Based Chatbot with RAG",
+      "description": "Built a conversational AI chatbot that ingests content from URLs and answers user queries using retrieval-augmented generation. Deployed via Streamlit.",
+      "tags": ["Streamlit", "LangChain", "FAISS", "Python"],
+      "link": ""
+    },
+    {
+      "title": "Social Support Dataset (EN & ES)",
+      "description": "Created a bilingual social support detection dataset in English and Spanish from social media, used for training and benchmarking NLP models.",
+      "tags": ["Data Curation", "NLP", "Multilingual"],
+      "link": ""
+    },
+    {
+      "title": "Crypto Emotion Analysis System",
+      "description": "Analyzed sentiment and psycholinguistic features of cryptocurrency discourse on X (Twitter), correlating emotional trends with market price movements.",
+      "tags": ["SenticNet", "Transformers", "Azure ML"],
+      "link": ""
+    },
+    {
+      "title": "IberLEF 2026 SSD Shared Task",
+      "description": "Organizing the Social Support Detection Shared Task at IberLEF 2026 — including task design, dataset curation, evaluation framework, and coordination.",
+      "tags": ["Shared Task", "NLP", "Benchmarking"],
+      "link": ""
+    }
+  ],
+  "skills": {
+    "technical": ["Python", "TensorFlow", "Keras", "Hugging Face", "Scikit-learn", "Pandas", "NumPy", "Streamlit", "LangChain", "FAISS", "Azure ML", "MySQL"],
+    "nlp": ["Sentiment Analysis", "Hate Speech Detection", "Hope Speech Detection", "NER", "POS Tagging", "Code-Mixed Text", "Language Identification", "Social Support Detection"],
+    "languages": [
+      {"name": "English", "level": "Fluent"},
+      {"name": "Persian", "level": "Native"},
+      {"name": "Baluchi", "level": "Native"},
+      {"name": "Spanish", "level": "Intermediate"}
+    ]
+  },
+  "achievements": [
+    "SECIHTI Scholarship from Government of Mexico for PhD studies",
+    "Master's graduation with Distinction",
+    "Main Organizer of SSD Shared Task at IberLEF 2026",
+    "Program Committee Member at SemEval-2027",
+    "Reviewed 10+ articles for international NLP/AI conferences",
+    "IBM Certifications: Python for Data Science, AI & Development"
+  ],
+  "chatbotKnowledge": [
+    {
+      "keywords": ["research", "area", "focus", "field", "specialization"],
+      "answer": "Moein's research focuses on Natural Language Processing (NLP) and Social Media Mining. He works on social support detection, hate/hope speech detection, sentiment analysis, language identification, and FinTech NLP — particularly cryptocurrency discourse analysis."
+    },
+    {
+      "keywords": ["who", "introduce", "yourself", "about him", "about you", "moein"],
+      "answer": "Moein Shahiki Tash is a PhD researcher in Artificial Intelligence (NLP) at IPN Mexico City, working at the Gelbukh Lab. He's also a Lecturer at Universidad Panamericana, where he teaches graduate-level NLP courses."
+    },
+    {
+      "keywords": ["contact", "email", "reach"],
+      "answer": "You can reach Moein at moein.tash@gmail.com or connect via LinkedIn and Google Scholar."
+    }
+  ],
+  "greetings": [
+    "Hello! I'm Moein's AI assistant. Feel free to ask me anything about Moein Tash."
+  ],
+  "offTopicResponse": "I can only answer questions related to Moein Tash. Please ask something about his background, experience, skills, or research."
+}
